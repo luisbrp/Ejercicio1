@@ -89,5 +89,26 @@ public class ModeloUsuario extends Conector {
 		}
 			
 	}
+	
+	public void modificarUsuario (Usuario usuario) {
+	
+		try {
+			pst = conexion.prepareStatement("UPDATE usuarios SET nombre=?, password=? WHERE id=?");
+			
+			
+			pst.setString(1, usuario.getNombre());
+			pst.setString(2, usuario.getPassword());
+			pst.setInt(3, usuario.getId());
+			
+			pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 
 }
