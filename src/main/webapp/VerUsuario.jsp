@@ -16,6 +16,7 @@
 		<p>Id: <%out.println(usuario.getId());%></p>
 		<p>Nombre: <%out.println(usuario.getNombre());%></p>
 		<p>Contraseña: <%out.println(usuario.getPassword());%></p>
+		<p>Fecha: <%out.println(usuario.getFecha());%></p>
 	</div>
 	<a href="VerUsuarios" class="btn btn-primary">Volver</a>
 </body>

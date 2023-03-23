@@ -25,6 +25,13 @@
            oninvalid="this.setCustomValidity('Por favor, ingresa una contraseña válida')" 
            onchange="this.setCustomValidity('')" /><br />
   </div>
+    <div class="form-group">
+    <label>Fecha:</label>
+    <input type="date" name="fecha" required 
+           class="form-control" 
+           oninvalid="this.setCustomValidity('Por favor, ingresa una fecha validad)" 
+           onchange="this.setCustomValidity('')" /><br />
+  </div>
   <input type="submit" value="Guardar" class="btn btn-primary" />
   <a href="VerUsuarios" class="btn btn-primary">Volver</a>
 </form>

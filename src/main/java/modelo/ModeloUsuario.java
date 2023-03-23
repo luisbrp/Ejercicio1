@@ -1,5 +1,6 @@
 package modelo;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,6 +28,7 @@ public class ModeloUsuario extends Conector {
 				usuario.setId(rs.getInt("id"));
 				usuario.setNombre(rs.getString("nombre"));
 				usuario.setPassword(rs.getString("password"));
+				usuario.setFecha(rs.getDate("fecha"));
 				usuarios.add(usuario);
 			}
 		} catch (SQLException e) {
@@ -55,6 +57,8 @@ public class ModeloUsuario extends Conector {
 				usuario.setId(rs.getInt("id"));
 				usuario.setNombre(rs.getString("nombre"));
 				usuario.setPassword(rs.getString("password"));
+				usuario.setFecha(rs.getDate("fecha"));
+				
 				usuarios.add(usuario);
 				
 				}	
@@ -75,13 +79,17 @@ public class ModeloUsuario extends Conector {
 		}
 	}
 	
-	public void insertarUsuario (Usuario usuario)  {
-		
+		public void insertarUsuario (Usuario usuario)  {
 			try {
-				pst = conexion.prepareStatement("INSERT INTO usuarios (nombre, password) VALUES (?,?)");
+				pst = conexion.prepareStatement("INSERT INTO usuarios (nombre, password, fecha) VALUES (?,?,?)");
 				
 				pst.setString(1, usuario.getNombre());
 				pst.setString(2, usuario.getPassword());
+				if(usuario.getFecha() != null) {
+				    pst.setDate(3, new Date(usuario.getFecha().getTime()));
+				} else {
+				    pst.setNull(3, java.sql.Types.DATE);
+				}
 
 				pst.execute();	
 			} catch (SQLException e) {
@@ -98,7 +106,8 @@ public class ModeloUsuario extends Conector {
 			
 			pst.setString(1, usuario.getNombre());
 			pst.setString(2, usuario.getPassword());
-			pst.setInt(3, usuario.getId());
+			pst.setDate(3, new Date(usuario.getFecha().getTime()));
+			pst.setInt(4, usuario.getId());
 			
 			pst.executeUpdate();
 			

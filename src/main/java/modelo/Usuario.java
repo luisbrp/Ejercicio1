@@ -1,10 +1,19 @@
 package modelo;
 
+import java.sql.Date;
+
 public class Usuario {
 	private int id;
 	private String nombre;
 	private String password;
+	private Date fecha;
 	
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 	public int getId() {
 		return id;
 	}
