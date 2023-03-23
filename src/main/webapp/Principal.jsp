@@ -16,15 +16,13 @@
 <%
   ArrayList<Usuario> usuarios = (ArrayList<Usuario>) request.getAttribute("usuarios");
 %>
-
-  <a href="InsertarUsuario" class="btn btn-primary ">InsertarUsuario</a>
-
-<table class="table table-striped table-dark mt-4">
+<table class="table table-striped table-dark">
   <thead>
     <tr>
       <th>Id</th>
       <th>Nombre</th>
       <th>Acciones</th>
+      <th><a href="InsertarUsuario" class="btn btn-primary ">InsertarUsuario</a></th>
     </tr>
   </thead>
   <tbody>

@@ -39,7 +39,7 @@ public class InsertarUsuario extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SimpleDateFormat fechaFormato = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/yyyy");
 		Usuario usuario = new Usuario();
 		ModeloUsuario modeloUsuario = new ModeloUsuario();
 

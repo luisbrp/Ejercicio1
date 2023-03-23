@@ -32,7 +32,7 @@
            oninvalid="this.setCustomValidity('Por favor, ingresa una fecha validad)" 
            onchange="this.setCustomValidity('')" /><br />
   </div>
-  <input type="submit" value="Guardar" class="btn btn-primary" />
+  <input type="submit" value="Guardar" class="btn btn-primary"/>
   <a href="VerUsuarios" class="btn btn-primary">Volver</a>
 </form>
 
